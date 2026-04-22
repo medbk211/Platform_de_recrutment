@@ -1,0 +1,14 @@
+.idea/
+.git_local_backup/
+client/node_modules/
+client/dist/
+server/node_modules/
+server/uploads/*
+!server/uploads/.gitkeep
+*.log
+.env
+client/.env
+server/.env
+.DS_Store
+Thumbs.db
+

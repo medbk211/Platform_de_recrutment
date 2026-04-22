@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning reajuste - Plateforme de recrutement</title>
+  <style>
+    :root {
+      --bg: #f5efe5;
+      --panel: rgba(255, 250, 242, 0.94);
+      --ink: #1d2733;
+      --muted: #556070;
+      --line: #ddcfbc;
+      --accent: #234e70;
+      --accent-2: #c05621;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(35, 78, 112, 0.18), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(192, 86, 33, 0.16), transparent 30%),
+        linear-gradient(135deg, #faf6ef, var(--bg));
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 48px rgba(29, 39, 51, 0.08);
+    }
+
+    h1, h2 {
+      margin: 0 0 12px;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 22px;
+    }
+
+    p, li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--ink);
+      font-size: 0.94rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.35fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 8px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(35, 78, 112, 0.08);
+    }
+
+    .diagram {
+      margin-top: 18px;
+      overflow-x: auto;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 18px 14px 28px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#234e70",
+        primaryTextColor: "#1d2733",
+        primaryBorderColor: "#234e70",
+        lineColor: "#7c8a99",
+        sectionBkgColor: "#f5efe5",
+        altSectionBkgColor: "#fbf7f1",
+        taskBkgColor: "#2f855a",
+        taskTextColor: "#ffffff",
+        activeTaskBkgColor: "#c05621",
+        activeTaskBorderColor: "#c05621",
+        milestoneBkgColor: "#7b341e",
+        milestoneBorderColor: "#7b341e",
+        gridColor: "#ddcfbc",
+        fontFamily: "Aptos, Segoe UI, sans-serif"
+      }
+    });
+  </script>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>Planning reajuste du projet</h1>
+      <p>Planning reajuste a partir du cahier des charges de la plateforme de recrutement en ligne. Au 22 avril 2026, environ 2 mois sont deja passes et il reste 1 mois, ce qui place le projet du lundi 23 fevrier 2026 au vendredi 22 mai 2026.</p>
+
+      <div class="chips">
+        <div class="chip">Periode : 23/02/2026 -> 22/05/2026</div>
+        <div class="chip">Duree : 13 semaines</div>
+        <div class="chip">Mode : lots iteratifs</div>
+        <div class="chip">Equipe supposee : front + back + QA/DevOps partiel</div>
+      </div>
+
+      <section class="grid">
+        <article>
+          <h2>Hypotheses retenues</h2>
+          <ul>
+            <li>Conception detaillee et socle technique sont lances en parallele.</li>
+            <li>Les fonctionnalites prioritaires du cahier des charges sont traitees avant les modules de confort.</li>
+            <li>Les weekends sont exclus du calcul des durees.</li>
+            <li>Le planning suppose des validations rapides sur les maquettes et les choix techniques.</li>
+            <li>Pour une seule personne, il faut prevoir une extension significative du calendrier.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Jalons</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Jalon</th>
+                <th>Date</th>
+                <th>Signification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>M1</td><td>04/03/2026</td><td>Perimetre fonctionnel valide</td></tr>
+              <tr><td>M2</td><td>13/03/2026</td><td>Socle technique pret</td></tr>
+              <tr><td>M3</td><td>14/04/2026</td><td>Parcours coeur operationnel</td></tr>
+              <tr><td>M4</td><td>29/04/2026</td><td>Beta fonctionnelle complete</td></tr>
+              <tr><td>M5</td><td>15/05/2026</td><td>Version prete a livrer</td></tr>
+              <tr><td>M6</td><td>22/05/2026</td><td>Livraison initiale</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section class="diagram">
+        <pre class="mermaid">gantt
+    title Planning reajuste - Plateforme de recrutement en ligne
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d/%m
+    excludes weekends
+
+    section Cadrage
+    Kick-off et cadrage                            :a1, 2026-02-23, 3d
+    Backlog priorise et criteres d'acceptation    :a2, 2026-02-26, 5d
+    Perimetre valide                              :milestone, m1, 2026-03-04, 0d
+
+    section Conception
+    Architecture applicative et schema BDD        :b1, 2026-03-02, 5d
+    Maquettes UX/UI et parcours critiques         :b2, 2026-03-02, 7d
+    Initialisation projet, CI/CD et securite base :b3, 2026-03-09, 5d
+    Socle technique pret                          :milestone, m2, 2026-03-13, 0d
+
+    section MVP coeur metier
+    Authentification et gestion des comptes       :c1, 2026-03-16, 7d
+    Gestion des offres d'emploi                   :c2, 2026-03-16, 10d
+    Recherche multicritere                        :c3, 2026-03-25, 5d
+    Profil candidat et CV en ligne                :c4, 2026-03-25, 8d
+    Depot de candidature et suivi                 :c5, 2026-04-01, 6d
+    Dashboard recruteur et candidatures           :c6, 2026-04-06, 7d
+    Parcours coeur operationnel                   :milestone, m3, 2026-04-14, 0d
+
+    section Complements fonctionnels
+    Admin, moderation et gestion utilisateurs     :d1, 2026-04-08, 8d
+    Messagerie interne                            :d2, 2026-04-15, 5d
+    Notifications email et in-app                 :d3, 2026-04-20, 4d
+    Gestion des entretiens                        :d4, 2026-04-22, 5d
+    Rapports et statistiques                      :d5, 2026-04-20, 7d
+    Beta fonctionnelle                            :milestone, m4, 2026-04-29, 0d
+
+    section Stabilisation et livraison
+    Tests d'integration et corrections            :e1, 2026-04-30, 7d
+    Performance, securite et responsive           :e2, 2026-04-30, 7d
+    Documentation technique et utilisateur        :e3, 2026-05-06, 5d
+    Deploiement preproduction et recette          :e4, 2026-05-11, 5d
+    Version prete a livrer                        :milestone, m5, 2026-05-15, 0d
+
+    section Cloture
+    Corrections finales et reserve                :f1, 2026-05-18, 3d
+    Livraison et demonstration finale             :f2, 2026-05-21, 2d
+    Livraison initiale                            :milestone, m6, 2026-05-22, 0d</pre>
+      </section>
+
+      <div class="footer">
+        Le detail editable du planning est aussi disponible dans le fichier <code>planning_initial_gantt.md</code>.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
